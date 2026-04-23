@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode/
+.idea/
+venv/
+env/
+.venv/
+.env
+*.csv
+*.xlsx
+*.json
+*.db
