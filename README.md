@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <img src="assets/dashboard01.png" alt="Smart Data Explorer Banner" width="800"/>
 
@@ -272,3 +273,7 @@ The following screenshots demonstrate the application running successfully insid
 
 This project is open source and available for personal and educational use.
 
+=======
+# Smart-Data-Explorer
+Upload your dataset and uncover powerful insights with interactive charts, AI-driven analysis, and advanced visualizations.
+>>>>>>> 2bd1a4374bdc2cde1c2595f1df2fe19dc68292f0
