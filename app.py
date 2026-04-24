@@ -37,17 +37,17 @@ st.sidebar.title("👨‍💻 About Me")
 st.sidebar.info(
     "**Satyam Jaiswal**\n\n"
     "🚀 **Computer Science Engineer | Tech Enthusiast**\n\n"
-    "💡 Passionate about **Web Development, AI/ML, and Open-Source Contributions**\n\n"
-    "📝 Sharing thoughts on **cutting-edge technologies, problem-solving, and innovation**\n\n"
-    "📚 Exploring **Cloud Computing, DevOps, and Blockchain**\n\n"
+    "💡 Passionate about **Data Science, AI/ML and Open-Source Contributions**\n\n"
+    "📝 Sharing thoughts on **cutting-edge technologies, problem-solving and innovation**\n\n"
+    "📚 Exploring **Cloud Computing, DevOps**\n\n"
     "🔥 Always eager to learn and build amazing projects!"
 )
 
 st.sidebar.title("📢 Contact Me")
 st.sidebar.info(
-    "📧 **Email:** [satyamjaiswal1003.com](mailto:satyamjaiswal1003@gmail.com)\n"
-    # "🔗 **GitHub:** [github.com/katiyarudit](https://github.com/katiyarudit/dataset_insights)\n"
-    # "💼 **LinkedIn:** [linkedin.com/in/udit1105](https://www.linkedin.com/in/udit1105/)\n"
+    "📧 **Email:** [satyamjaiswal1003@gmail.com](mailto:satyamjaiswal1003@gmail.com)\n"
+    "🔗 **GitHub:** [https://github.com/Satyamjai1003](https://github.com/Satyamjai1003/dataset_insights)\n"
+    "💼 **LinkedIn:** [linkedin.com/in/satyamjaiswal02](https://www.linkedin.com/in/satyamjaiswal02/)\n"
 )
 
 st.sidebar.markdown("---")
@@ -112,14 +112,14 @@ if uploaded_file:
                 st.subheader("📈 Distribution of Features")
                 for col in selected_cols:
                     fig = px.histogram(df, x=col, nbins=30, title=f"Distribution of {col}")
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
                 st.subheader("📊 Scatter Plot")
                 if len(selected_cols) > 1:
                     scatter_x = st.selectbox("Select X-axis", selected_cols)
                     scatter_y = st.selectbox("Select Y-axis", selected_cols)
                     fig = px.scatter(df, x=scatter_x, y=scatter_y, title=f"{scatter_x} vs {scatter_y}")
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 else:
                     st.warning("⚠️ Need at least two columns to create a scatter plot.")
                 
@@ -133,7 +133,7 @@ if uploaded_file:
 
                         # Generate Pie Chart
                         fig = px.pie(df, names=selected_pie_col, title=f"Distribution of {selected_pie_col}")
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                 else:
                         st.warning("⚠️ No categorical columns found for pie chart visualization.")
 
@@ -141,7 +141,7 @@ if uploaded_file:
                 st.subheader("⚠️ Outlier Detection")
                 for col in selected_cols:
                     fig = px.box(df, y=col, title=f"Outliers in {col}")
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
                 if "target" in df.columns:
                     from sklearn.ensemble import RandomForestRegressor

@@ -9,7 +9,4 @@ venv/
 .git/
 .gitignore
 .vscode/
-*.csv
-*.xlsx
-*.json
 *.db

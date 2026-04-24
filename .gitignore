@@ -7,7 +7,5 @@ venv/
 env/
 .venv/
 .env
-*.csv
-*.xlsx
 *.json
 *.db
