@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   <img src="assets/dashboard01.png" alt="Smart Data Explorer Banner" width="800"/>
 
@@ -12,27 +11,26 @@
 
 
 # Smart Data Explorer
-The **Smart Data Explorer** is an automated Exploratory Data Analysis (EDA) web application. It takes raw datasets and instantly transforms them into meaningful, interactive data visualizations and summary statistics. It is highly beneficial for data professionals, researchers, and students because it heavily reduces the boilerplate code needed to understand data distributions, handle missing values, and analyze core data relationships. 
+The **Smart Data Explorer** is an automated Exploratory Data Analysis (EDA) web application. It takes raw datasets and instantly transforms them into a meaningful, interactive data visualizations and summary statistics. It is highly beneficial for data professionals, researchers and students because it heavily reduces the boilerplate code needed to understand data distributions, handle missing values and analyze core data relationships. 
 
 ---
 
 ## Overview of the Project
 
-When approaching a new dataset, Data Scientists spend roughly 70% of their time on data understanding and basic preprocessing. The Smart Data Explorer automates this exact process. By simply uploading a file, the application processes it and provides comprehensive insights—including correlation heatmaps, feature importance scoring via Scikit-Learn, and automated summary reports that outline unique and missing values in real-time.
+When approaching a new dataset, Data Scientists spend roughly 70% of their time on data understanding and basic preprocessing. The Smart Data Explorer automates this exact process. By simply uploading a file, the application processes it and provides comprehensive insights—including correlation heatmaps, feature importance scoring via Scikit-Learn and automated summary reports that outline unique and missing values in real-time.
 
 ---
 
 ## Features
 - **📂 Multi-Format File Upload:** Seamlessly upload `.csv` or `.xlsx` datasets.
-- **🛠️ Built-in Data Preprocessing:** Clean your data instantly by dropping non-valid rows or filling missing numeric values with the column mean.
+- **🛠️ Built-in Data Preprocessing:** Clean your data instantly by dropping non-valid rows or filling `missing numeric values` with the column mean.
 - **📊 Interactive Advanced Visualizations:** 
   - Dynamic **Histograms** and **Box Plots** for distribution tracking.
   - Interactive **Scatter Plots** for relationships.
   - **Pie Charts** for categorical column breakdowns.
   - Custom **Correlation Heatmaps**.
 - **🤖 AI-Driven Feature Importance:** Automatically computes and displays feature prominence if a `target` column is detected using a Random Forest algorithm.
-- **🌗 Custom Theming & UI:** Built-in Light Mode and Dark Mode for the application canvas.
-- **🐳 Dockerized Architecture:** Highly portable containerized setup.
+- **🌗 Custom Theme & UI Design:** Built-in Light Mode and Dark Mode for the application canvas.
 
 
 ---
@@ -40,26 +38,35 @@ When approaching a new dataset, Data Scientists spend roughly 70% of their time 
 ## Tech Stack
 | Layer / Category | Technology | Purpose |
 | :--- | :--- | :--- |
-| **Frontend / UI Layer** | Streamlit | Rapid development of interactive data components and rendering |
-| **Data Processing Layer** | Pandas, NumPy | High-performance dataframe manipulation and calculations |
-| **Visualization Layer** | Plotly, Seaborn, Matplotlib | Dynamic graphs and static statistical charts |
-| **Machine Learning Layer** | Scikit-Learn | Supervised machine learning algorithms (Random Forest) |
-| **Deployment & Ops** | Docker | Environment containerization and isolated dependency management |
+| **Frontend / UI Layer** | Streamlit | Rapid development of interactive data components and rendering. |
+| **Data Processing Layer** | Pandas, NumPy | High-performance dataframe manipulation and calculations. |
+| **Visualization Layer** | Plotly, Seaborn, Matplotlib | Dynamic graphs and static statistical charts and insights. |
+| **Machine Learning Layer** | Scikit-Learn | Supervised machine learning algorithms (Random Forest). |
+| **Containerization** | Docker | Environment containerization and isolated dependency management. |
 
 
 ---
 
 ## Project Structure
 
-```plaintext
+```
 Smart-Data-Explorer/
-├── app.py                   # Main Streamlit Application Logic
-├── requirements.txt         # Project Dependencies
-├── Dockerfile               # Docker instruction file
-├── .dockerignore            # Excludes items during Docker build
-├── .gitignore               # Excludes items from Git tracking
-├── assets/                  # App images and UI assets
-└── README.md                # Project Documentation
+├── app.py                     # Main Streamlit application
+├── requirements.txt           # Python dependencies
+├── Dockerfile                 # Docker configuration
+├── .dockerignore              # Ignore files for Docker build
+├── .gitignore                 # Ignore files for Git
+├── README.md                  # Project documentation
+├── assets/                    # UI images and static assets
+│   ├── architecture01.png
+│   ├── dashboard01.png
+│   ├── dashboard04.png
+│   ├── dashboard05.png
+│   └── dashboard06.png
+├── screenshots/               # Screenshots for README/demo
+│   ├── screenshot_1645.png
+│   └── screenshot_2026-04-24_111555.png
+└── .devcontainer/             # Dev container configuration (optional)
 ```
 ---
 
@@ -68,10 +75,10 @@ Smart-Data-Explorer/
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Edge, or Safari)
-- (Optional) [Docker](https://www.docker.com/products/docker-desktop/) for containerized deployment
+- [Docker](https://www.docker.com/products/docker-desktop/) for containerized deployment
 
 
-### 🛑 Prerequisites
+### Prerequisites
 Before starting, ensure that you have the following installed on your machine:
 - **Python 3.9+** (For local setup)
 - **Git** (To clone the repository)
@@ -112,25 +119,12 @@ Before starting, ensure that you have the following installed on your machine:
    ```
 6. **Access the application**
 
-   Open Navigate to `http://localhost:8501` in your browser.
+   Open Navigate to [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
+
 
 ## Docker Setup
-
-### 📜 Understanding the Dockerfile
-The project is containerized to prevent "it works on my machine" issues. Below is a breakdown of the instructions used in our `Dockerfile`:
-
-- `FROM python:3.10-slim`: Uses a lightweight, official Python runtime image.
-- `WORKDIR /app`: Sets the working directory inside the container.
-- `ENV PYTHONDONTWRITEBYTECODE=1 & PYTHONUNBUFFERED=1`: Ensures Python behaves optimally in containers by not writing `.pyc` files and preventing logging delays.
-- `COPY requirements.txt . & RUN pip install...`: Copies the dependency file and installs them first (leveraging Docker's cache).
-- `COPY . .`: Copies the remaining application code.
-- `RUN mkdir -p /root/.streamlit...`: Overrides Streamlit configurations to ensure it runs continuously in a headless mode properly suited for containers.
-- `EXPOSE 8501`: Maps the application port making it available globally.
-- `CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]`: The default command to start the web server when the container runs.
-
----
 
 **Why use Docker for this project?**
 
@@ -139,7 +133,10 @@ The project is containerized to prevent "it works on my machine" issues. Below i
 - **Easy deployment** — A single command builds and runs the entire application.
 - **Portability** — The Docker image can be shared, deployed to cloud services, or run on any Docker-enabled machine.
 
-### Understanding the Dockerfile
+  
+
+
+### Dockerfile
 
 The `Dockerfile` in this project defines how the application image is built:
 
@@ -194,7 +191,7 @@ CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
 docker build -t smart-data-explorer .
 ```
 
-This command reads the `Dockerfile`, downloads the  base image, copies the application files, and creates a new Docker image tagged as `smart-data-explorer`.
+This command reads the `Dockerfile`, downloads the  base image, copies the application files and creates a new Docker image tagged as `smart-data-explorer`.
 
 **Step 2 — Run the container**
 
@@ -220,7 +217,7 @@ This lists all running containers.
 
 **Step 4 — Access the application**
 
-Open `http://localhost:8501` in your browser.
+Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 **Step 5 — Stop and remove the container (when done)**
 
@@ -236,12 +233,12 @@ The following screenshots demonstrate the application running successfully insid
 ### Docker Build
 
 <!-- Replace with your screenshot path or URL -->
-![Docker Build](screenshot/docker%20build.png)
+![Docker Build](Screenshots/Screenshot%20(1645).png)
 
 ### Docker Run
 
 <!-- Replace with your screenshot path or URL -->
-![Docker Run](screenshot/docker%20run.png)
+![Docker Run]()
 
 ### Docker PS (Container Status)
 
