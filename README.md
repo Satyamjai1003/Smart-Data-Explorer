@@ -238,20 +238,20 @@ The following screenshots demonstrate the application running successfully insid
 ### Docker Run
 
 <!-- Replace with your screenshot path or URL -->
-![Docker Run]()
+![Docker Run](Screenshots/Screenshot%202026-04-26%20142517.png)
 
 ### Docker PS (Container Status)
 
 <!-- Replace with your screenshot path or URL -->
-![Docker PS](screenshot/docker%20ps.png)
+![Docker PS](Screenshots/Screenshot%202026-04-24%20111555.png)
 
 ### Application Running on Localhost
 
 <!-- Replace with your screenshot path or URL -->
-![Application on Localhost](screenshot/localhost.png)
+![Application on Localhost](Screenshots/Screenshot%202026-04-26%20143810.png)
 
 ---
-## 🔮 Future Improvements
+## **🔮 Future Improvements**
 - **Automated PDF Exporting:** Add a button to download the generated exploratory analysis straight to a formatted PDF.
 - **Support for Big Data Platforms:** Integrate with architectures like Dask or PySpark to handle files larger than 2GB natively.
 - **Advanced Imputation Methods:** Allowing users to patch datasets using advanced algorithms like KNN-Imputation or interpolation rather than just column mean.
@@ -264,13 +264,7 @@ The following screenshots demonstrate the application running successfully insid
 ## 🧑‍💻 Authors
 
 - **Satyam Jaiswal** - *Core Development and Analysis Workflows* - [GitHub](https://github.com/Satyamjai1003) | [LinkedIn](https://www.linkedin.com/in/satyamjaiswal02/)
-- **Udit Katiyar** - *Deployment, Architecture, and Version Control* - [GitHub](https://github.com/katiyarudit)
 
 ## License
 
 This project is open source and available for personal and educational use.
-
-=======
-# Smart-Data-Explorer
-Upload your dataset and uncover powerful insights with interactive charts, AI-driven analysis, and advanced visualizations.
->>>>>>> 2bd1a4374bdc2cde1c2595f1df2fe19dc68292f0
